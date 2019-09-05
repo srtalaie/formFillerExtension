@@ -1,3 +1,5 @@
 let input = $('input');
 
-input.val('Hello World');
+$('#helloWorldBtn').on('click', function(){
+    input.val('Hello World');
+});
