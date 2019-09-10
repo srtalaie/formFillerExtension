@@ -10,9 +10,12 @@ function gotMessage(request, sender, senResponse){
         // for (input of allInputs){
         //     input.value = 'Hello World!';
         // }
+        
+        //For target need to tab in the giftcard number field and fill number then move
+        //to giftcard access number field and fill number
         let giftCardNumberInput = document.getElementById('giftCardNumberInput');
         let giftCardAccessNumberInput = document.getElementById('giftCardAccessNumberInput');
-        giftCardNumberInput.value = 'XXX-XXX-XXX-XXX-XXX';
-        giftCardAccessNumberInput = 'XXXXXXXX';
+        giftCardNumberInput.value = '111-111-111-111-111';
+        giftCardAccessNumberInput.value = '11111111';
     }
 }
