@@ -13,9 +13,42 @@ function gotMessage(request, sender, senResponse){
         
         //For target need to tab in the giftcard number field and fill number then move
         //to giftcard access number field and fill number
-        let giftCardNumberInput = document.getElementById('giftCardNumberInput');
-        let giftCardAccessNumberInput = document.getElementById('giftCardAccessNumberInput');
-        giftCardNumberInput.value = '111-111-111-111-111';
-        giftCardAccessNumberInput.value = '11111111';
+        // let giftCardNumberInput = document.getElementById('giftCardNumberInput');
+        // let giftCardAccessNumberInput = document.getElementById('giftCardAccessNumberInput');
+        // giftCardNumberInput.value = '041-291-736-307-395';
+        // giftCardAccessNumberInput.value = '75750716';
+
+        // Promise.all([fillGiftCardNumber, fillGiftCardAccessNumber]).then(function(){
+        //     console.log('worked');
+        // });
+
+        //Code for target does not work
+        // console.log('Card #');
+        // let giftCardNumberInput = document.getElementById('giftCardNumberInput');
+        // giftCardNumberInput.value = '041-291-736-307-395';
+        
+        // console.log('Card Access #');
+        // let giftCardAccessNumberInput = document.getElementById('giftCardAccessNumberInput');
+        // giftCardAccessNumberInput.value = '75750716';
+
+        //Works on J.Crews web site
+        console.log('Card #');
+        let giftCardNumberInput = document.getElementById('giftCard');
+        giftCardNumberInput.value = '041-291-736-307-395';
     }
+
+}
+
+function fillGiftCardNumber(){
+    console.log('Card #');
+    let giftCardNumberInput = document.getElementById('giftCardNumberInput');
+    giftCardNumberInput.tabIndex = '1';
+    giftCardNumberInput.value = '041-291-736-307-395';
+}
+
+function fillGiftCardAccessNumber(){
+    console.log('Card Access #');
+    let giftCardAccessNumberInput = document.getElementById('giftCardAccessNumberInput');
+    giftCardAccessNumberInput.tabIndex = '1';
+    giftCardAccessNumberInput.value = '75750716';
 }
