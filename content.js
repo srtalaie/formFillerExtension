@@ -18,6 +18,7 @@ function gotMessage(request, sender, senResponse){
         // giftCardNumberInput.value = '041-291-736-307-395';
         // giftCardAccessNumberInput.value = '75750716';
 
+        //Tried to use two functions to tab into each field and fill the value sequentially
         // Promise.all([fillGiftCardNumber, fillGiftCardAccessNumber]).then(function(){
         //     console.log('worked');
         // });
