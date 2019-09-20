@@ -56,14 +56,14 @@ function fillGiftCardNumber(){
     console.log('Card #');
     let giftCardNumberInput = document.getElementById('payment.promotionCode');
     giftCardNumberInput.tabIndex = '1';
-    giftCardNumberInput.value = '1234123412341234';
+    giftCardNumberInput.value = '6176573431101880';
 }
 
 function fillGiftCardAccessNumber(){
     console.log('Card Access #');
     let giftCardAccessNumberInput = document.getElementById('payment.giftCard.pin');
     giftCardAccessNumberInput.tabIndex = '1';
-    giftCardAccessNumberInput.value = '1234';
+    giftCardAccessNumberInput.value = '5490';
 }
 
 function onlyTest(){

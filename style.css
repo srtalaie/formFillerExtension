@@ -1,0 +1,75 @@
+body {
+    width: 350px;
+    height:450px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Big Shoulders Display', cursive, Arial, Helvetica, sans-serif;
+    text-align: center;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    margin: 0 auto;
+    font-size: 4em;
+}
+
+.message {
+    bottom: 55px;
+    position: absolute;
+    left: 0;
+    font-size: 2em;
+}
+
+.gift-card {
+    height: 180px;
+    width: 180px;
+}
+
+#submit {
+    bottom: 0;
+    position: absolute;
+	-moz-box-shadow: 0px 10px 14px -7px #91b8b3;
+	-webkit-box-shadow: 0px 10px 14px -7px #91b8b3;
+	box-shadow: 0px 10px 14px -7px #91b8b3;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #000302), color-stop(1, #615861));
+	background:-moz-linear-gradient(top, #000302 5%, #615861 100%);
+	background:-webkit-linear-gradient(top, #000302 5%, #615861 100%);
+	background:-o-linear-gradient(top, #000302 5%, #615861 100%);
+	background:-ms-linear-gradient(top, #000302 5%, #615861 100%);
+	background:linear-gradient(to bottom, #000302 5%, #615861 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#000302', endColorstr='#615861',GradientType=0);
+	background-color:#000302;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+    color:#ffffff;
+    font-size: 1.89em;
+	font-family:'Big Shoulders Display', cursive, Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #615861;
+}
+#submit:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #615861), color-stop(1, #000302));
+	background:-moz-linear-gradient(top, #615861 5%, #000302 100%);
+	background:-webkit-linear-gradient(top, #615861 5%, #000302 100%);
+	background:-o-linear-gradient(top, #615861 5%, #000302 100%);
+	background:-ms-linear-gradient(top, #615861 5%, #000302 100%);
+	background:linear-gradient(to bottom, #615861 5%, #000302 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#615861', endColorstr='#000302',GradientType=0);
+	background-color:#615861;
+}
+#submit:active {
+	position:relative;
+	top:1px;
+}
