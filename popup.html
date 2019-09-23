@@ -6,17 +6,58 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Big+Shoulders+Display&display=swap" rel="stylesheet">
-    <title>EZ Gift Card</title>
+    <title>EZGiftCard</title>
 </head>
 <body>
     <div class="container">
-        <h1>EZ Gift Card</h1>
+        <h1>EZGiftCard</h1>
         <img src="images/ezgiftcard-logo.jpg">
-        <img class="gift-card" src="/images/best_buy_gift_card.jpg">
-        <div class="message">
-            <p>Congrats! You have a Gift Card You can Apply on this Order!</p>
+        <div class="gift-cards-holder">
+                <ul class="gift-cards-list">
+                    <li>
+                        <div class="gift-card-item">
+                            <input type="checkbox">
+                            <img class="gift-card" src="/images/best_buy_gift_card.jpg">
+                            <p>Best Buy - $20</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gift-card-item" id="greyed">
+                            <input type="checkbox">
+                            <img class="gift-card" src="/images/gift-card-target.png">
+                            <p>Target - $60</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gift-card-item" id="greyed">
+                            <input type="checkbox">
+                            <img class="gift-card" src="/images/amazon.png">
+                            <p>Amazon - $50</p>
+                        </div>
+                    </li>
+                    <div class="gift-card-item" id="greyed">
+                            <input type="checkbox">
+                            <img class="gift-card" src="/images/jcrew.png">
+                            <p>J. Crew - $100</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gift-card-item" id="greyed">
+                            <input type="checkbox">
+                            <img class="gift-card" src="/images/visagift.png">
+                            <p>Visa - $50</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="gift-card-item" id="greyed">
+                            <input type="checkbox">
+                            <img class="gift-card" src="/images/macys.png">
+                            <p>Macy's - $50</p>
+                        </div>
+                    </li>
+                </ul>
         </div>
-        <button id="submit">Apply Your Gift Card</button>
+        <button id="submit">Apply Your Gift Cards</button>
         <script src="popup.js"></script>
     </div>
 </body>
