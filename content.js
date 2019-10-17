@@ -42,6 +42,7 @@ function gotMessage(request, sender, senResponse){
         //Works on Best Buy's web site with card # and pin
         fillGiftCardNumber();
         fillGiftCardAccessNumber();
+        clickButton();
 
         //Walmart giftcard number works fine, pin does not show up
         // let giftCardNumberInput = document.getElementById('number');
@@ -55,15 +56,21 @@ function gotMessage(request, sender, senResponse){
 function fillGiftCardNumber(){
     console.log('Card #');
     let giftCardNumberInput = document.getElementById('payment.promotionCode');
-    giftCardNumberInput.tabIndex = '1';
-    giftCardNumberInput.value = '6176573431101880';
+    console.log(giftCardNumberInput.value);
+    giftCardNumberInput.defaultValue = '6167573431101880';
+    console.log(giftCardNumberInput.value);
 }
 
 function fillGiftCardAccessNumber(){
     console.log('Card Access #');
     let giftCardAccessNumberInput = document.getElementById('payment.giftCard.pin');
-    giftCardAccessNumberInput.tabIndex = '1';
-    giftCardAccessNumberInput.value = '5490';
+    giftCardAccessNumberInput.defaultValue = '5490';
+}
+
+function clickButton(){
+    console.log('clicked button');
+    let button = document.getElementsByClassName('gift-promo-cards__apply-btn');
+    button.click();
 }
 
 function onlyTest(){
