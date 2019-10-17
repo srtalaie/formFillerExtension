@@ -56,14 +56,14 @@ function gotMessage(request, sender, senResponse){
 function fillGiftCardNumber(){
     console.log('Card #');
     let giftCardNumberInput = document.getElementById('payment.promotionCode');
-    console.log(giftCardNumberInput.value);
+    giftCardNumberInput.id = 'payment.giftCard.code';
     giftCardNumberInput.defaultValue = '6167573431101880';
-    console.log(giftCardNumberInput.value);
 }
 
 function fillGiftCardAccessNumber(){
     console.log('Card Access #');
     let giftCardAccessNumberInput = document.getElementById('payment.giftCard.pin');
+    giftCardAccessNumberInput.disabled = false;
     giftCardAccessNumberInput.defaultValue = '5490';
 }
 
