@@ -40,9 +40,22 @@ function gotMessage(request, sender, senResponse){
         // giftCardNumberInput.value = '041-291-736-307-395';
 
         //Works on Best Buy's web site with card # and pin
-        fillGiftCardNumber();
-        fillGiftCardAccessNumber();
-        clickButton();
+
+        let giftCardNumArray = '6167573431101880'.split('');
+        fillGiftCardNum(giftCardNumArray);
+        //Calls synchronously
+        // let funcArray = [
+        //     fillGiftCardNumber(),
+        //     fillGiftCardAccessNumber(),
+        //     clickButton()
+        // ]
+
+        // funcArray.forEach(element => {
+        //     element;
+        // })
+        // fillGiftCardNumber();
+        // fillGiftCardAccessNumber();
+        // clickButton();
 
         //Walmart giftcard number works fine, pin does not show up
         // let giftCardNumberInput = document.getElementById('number');
@@ -53,10 +66,23 @@ function gotMessage(request, sender, senResponse){
 
 }
 
+function fillGiftCardNum(arr){
+    let offset = 0;
+    let giftCardNumberInput = document.getElementById('payment.promotionCode');
+    arr.forEach(num => {
+        setTimeout(function(){
+            let currVal = giftCardNumberInput.innerHTML
+            giftCardNumberInput.value = currVal += num;
+            console.log(num, currVal);
+        }, 1500, offset)
+        offset += 500;
+    })
+}
+
 function fillGiftCardNumber(){
     console.log('Card #');
     let giftCardNumberInput = document.getElementById('payment.promotionCode');
-    giftCardNumberInput.id = 'payment.giftCard.code';
+    // giftCardNumberInput.id = 'payment.giftCard.code';
     giftCardNumberInput.defaultValue = '6167573431101880';
 }
 
