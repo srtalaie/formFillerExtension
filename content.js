@@ -43,7 +43,8 @@ function gotMessage(request, sender, senResponse){
 
         let giftCardNumArray = '6167573431101880'.split('');
         fillGiftCardNum(giftCardNumArray);
-        //Calls synchronously
+
+        //Calls synchronously original code that worked
         // let funcArray = [
         //     fillGiftCardNumber(),
         //     fillGiftCardAccessNumber(),
