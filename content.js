@@ -66,6 +66,7 @@ function gotMessage(request, sender, senResponse){
 
 }
 
+//Add numbers as if user typed it to hopefully change the field recognize the # as a gift card #
 function fillGiftCardNum(arr){
     let offset = 0;
     let giftCardNumberInput = document.getElementById('payment.promotionCode');
