@@ -41,8 +41,8 @@ function gotMessage(request, sender, senResponse){
 
         //Works on Best Buy's web site with card # and pin
 
-        let giftCardNumArray = '6167573431101880'.split('');
-        fillGiftCardNum(giftCardNumArray);
+        // let giftCardNumArray = '6167573431101880'.split('');
+        // fillGiftCardNum(giftCardNumArray);
 
         //Calls synchronously original code that worked
         // let funcArray = [
@@ -63,9 +63,15 @@ function gotMessage(request, sender, senResponse){
         // giftCardNumberInput.value = '1234123412341234';
         // let giftCardPin = document.getElementById('pin');
         // giftCardPin = '1234';
+
+        //Change react state to use giftcard
+        let component = ReactDOM.render(ref = (GiftPromoCards) => window.GiftPromoCards = GiftPromoCards )
+        // GiftPromoCards.setState({ giftCard: true });
+        console.log(component);
     }
 
 }
+
 
 //Add numbers as if user typed it to hopefully change the field recognize the # as a gift card #
 function fillGiftCardNum(arr){
@@ -93,7 +99,7 @@ function fillGiftCardNumber(){
 function fillGiftCardAccessNumber(){
     console.log('Card Access #');
     let giftCardAccessNumberInput = document.getElementById('payment.giftCard.pin');
-    giftCardAccessNumberInput.disabled = false;
+    // giftCardAccessNumberInput.disabled = false;
     giftCardAccessNumberInput.defaultValue = '5490';
 }
 
