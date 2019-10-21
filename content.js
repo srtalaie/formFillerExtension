@@ -73,12 +73,14 @@ function fillGiftCardNum(arr){
     let giftCardNumberInput = document.getElementById('payment.promotionCode');
     arr.forEach(num => {
         setTimeout(function(){
-            let currVal = giftCardNumberInput.innerHTML
-            giftCardNumberInput.value = currVal += num;
-            console.log(num, currVal);
-        }, 1500, offset)
-        offset += 500;
+            let currVal = giftCardNumberInput.value
+            console.log('current value:', currVal)
+            giftCardNumberInput.value = currVal + num;
+            console.log('num + curval:', num, currVal);
+        }, 5500, offset)
+        offset += 5500;
     })
+    console.log(giftCardNumberInput.value);
 }
 
 function fillGiftCardNumber(){
