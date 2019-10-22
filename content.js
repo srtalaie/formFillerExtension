@@ -58,10 +58,8 @@ function gotMessage(request, sender, senResponse){
         // fillGiftCardAccessNumber();
         // clickButton();
 
-        //Walmart giftcard number works fine, pin does not show up
+        //Walmart giftcard number works fine
         fillGiftCardField();
-
-        //Change react state to use giftcard
     }
 
 }
@@ -74,7 +72,7 @@ function fillGiftCardField(){
     giftCardPin.value = '1234';
     let submitButton = document.getElementsByClassName('submit-save-gift-card');
     console.log(submitButton);
-    submitButton[0].click();
+    // submitButton[0].click();
 }
 
 //Add numbers as if user typed it to hopefully change the field recognize the # as a gift card #
