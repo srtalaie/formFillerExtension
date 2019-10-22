@@ -59,56 +59,60 @@ function gotMessage(request, sender, senResponse){
         // clickButton();
 
         //Walmart giftcard number works fine, pin does not show up
-        // let giftCardNumberInput = document.getElementById('number');
-        // giftCardNumberInput.value = '1234123412341234';
-        // let giftCardPin = document.getElementById('pin');
-        // giftCardPin = '1234';
+        fillGiftCardField();
 
         //Change react state to use giftcard
-        let component = ReactDOM.render(ref = (GiftPromoCards) => window.GiftPromoCards = GiftPromoCards )
-        // GiftPromoCards.setState({ giftCard: true });
-        console.log(component);
     }
 
 }
 
+//Walmart function
+function fillGiftCardField(){
+    let giftCardNumberInput = document.getElementById('number');
+    giftCardNumberInput.value = '1234123412341234';
+    let giftCardPin = document.getElementById('pin');
+    giftCardPin.value = '1234';
+    let submitButton = document.getElementsByClassName('submit-save-gift-card');
+    console.log(submitButton);
+    submitButton[0].click();
+}
 
 //Add numbers as if user typed it to hopefully change the field recognize the # as a gift card #
-function fillGiftCardNum(arr){
-    let offset = 0;
-    let giftCardNumberInput = document.getElementById('payment.promotionCode');
-    arr.forEach(num => {
-        setTimeout(function(){
-            let currVal = giftCardNumberInput.value
-            console.log('current value:', currVal)
-            giftCardNumberInput.value = currVal + num;
-            console.log('num + curval:', num, currVal);
-        }, 5500, offset)
-        offset += 5500;
-    })
-    console.log(giftCardNumberInput.value);
-}
+// function fillGiftCardNum(arr){
+//     let offset = 0;
+//     let giftCardNumberInput = document.getElementById('payment.promotionCode');
+//     arr.forEach(num => {
+//         setTimeout(function(){
+//             let currVal = giftCardNumberInput.value
+//             console.log('current value:', currVal)
+//             giftCardNumberInput.value = currVal + num;
+//             console.log('num + curval:', num, currVal);
+//         }, 5500, offset)
+//         offset += 5500;
+//     })
+//     console.log(giftCardNumberInput.value);
+// }
 
-function fillGiftCardNumber(){
-    console.log('Card #');
-    let giftCardNumberInput = document.getElementById('payment.promotionCode');
-    // giftCardNumberInput.id = 'payment.giftCard.code';
-    giftCardNumberInput.defaultValue = '6167573431101880';
-}
+// function fillGiftCardNumber(){
+//     console.log('Card #');
+//     let giftCardNumberInput = document.getElementById('payment.promotionCode');
+//     // giftCardNumberInput.id = 'payment.giftCard.code';
+//     giftCardNumberInput.defaultValue = '6167573431101880';
+// }
 
-function fillGiftCardAccessNumber(){
-    console.log('Card Access #');
-    let giftCardAccessNumberInput = document.getElementById('payment.giftCard.pin');
-    // giftCardAccessNumberInput.disabled = false;
-    giftCardAccessNumberInput.defaultValue = '5490';
-}
+// function fillGiftCardAccessNumber(){
+//     console.log('Card Access #');
+//     let giftCardAccessNumberInput = document.getElementById('payment.giftCard.pin');
+//     // giftCardAccessNumberInput.disabled = false;
+//     giftCardAccessNumberInput.defaultValue = '5490';
+// }
 
-function clickButton(){
-    console.log('clicked button');
-    let button = document.getElementsByClassName('gift-promo-cards__apply-btn');
-    button.click();
-}
+// function clickButton(){
+//     console.log('clicked button');
+//     let button = document.getElementsByClassName('gift-promo-cards__apply-btn');
+//     button.click();
+// }
 
-function onlyTest(){
-    console.log('Test');
-}
+// function onlyTest(){
+//     console.log('Test');
+// }
