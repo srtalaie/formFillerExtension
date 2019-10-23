@@ -46,9 +46,8 @@ function gotMessage(request, sender, senResponse){
 
         //Calls synchronously original code that worked
         // let funcArray = [
-        //     fillGiftCardNumber(),
-        //     fillGiftCardAccessNumber(),
-        //     clickButton()
+        //    openForm(),
+        //    fillGiftCardField()
         // ]
 
         // funcArray.forEach(element => {
@@ -59,9 +58,28 @@ function gotMessage(request, sender, senResponse){
         // clickButton();
 
         //Walmart giftcard number works fine
-        fillGiftCardField();
+        // fillGiftCardField();
+
+        runFuncs();
     }
 
+}
+
+//Open gift card form
+
+//Run functions
+function runFuncs(){
+    openForm();
+    setTimeout(function(){
+        fillGiftCardField();
+    }, 100)
+}
+
+function openForm(){
+    let giftCardFormBtn = document.querySelector('[data-name="GIFTCARD"]');
+    console.log(giftCardFormBtn)
+    giftCardFormBtn.click();
+    return true;
 }
 
 //Walmart function
