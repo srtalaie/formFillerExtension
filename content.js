@@ -1,12 +1,15 @@
 chrome.runtime.onMessage.addListener(buttonClicked);
 
-window.onload = function (){
-    console.log('Im here!')
-};
+//Popup on page load
+// const popupStyle = "color: red; font-family:"
+
+// window.onload = function (){
+//     let h1 = document.createElement('div');
+//     h1.innerHTML = '<p>Hello</p>';
+//     document.getElementsByTagName('body')[0].prepend(h1);
+// };
 
 function buttonClicked(request, sender, senResponse){
-    console.log(request.txt);
-
     if(request.txt === 'clicked'){
         //Original Code to fill all input elements with text
         // let allInputs = document.getElementsByTagName('input');
