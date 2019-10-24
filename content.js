@@ -1,9 +1,10 @@
-console.log('Sup');
-
 chrome.runtime.onMessage.addListener(gotMessage);
 
 function gotMessage(request, sender, senResponse){
     console.log(request.txt);
+    if(request.txt){
+        document.getElementsByTagName('p').style.backgroundColor('red');
+    }
     if(request.txt === 'clicked'){
         //Original Code to fill all input elements with text
         // let allInputs = document.getElementsByTagName('input');
