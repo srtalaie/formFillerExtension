@@ -1,10 +1,12 @@
-chrome.runtime.onMessage.addListener(gotMessage);
+chrome.runtime.onMessage.addListener(buttonClicked);
 
-function gotMessage(request, sender, senResponse){
+window.onload = function (){
+    console.log('Im here!')
+};
+
+function buttonClicked(request, sender, senResponse){
     console.log(request.txt);
-    if(request.txt){
-        document.getElementsByTagName('p').style.backgroundColor('red');
-    }
+
     if(request.txt === 'clicked'){
         //Original Code to fill all input elements with text
         // let allInputs = document.getElementsByTagName('input');
