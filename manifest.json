@@ -2,12 +2,10 @@
     "name": "formFillerExtension",
     "manifest_version": 2,
     "version": "1.0",
-    "permissions": ["tabs"],
+    "permissions": ["tabs", "*://*.walmart.com/checkout/*/payment"],
     "content_scripts": [
         {
-            "matches": [
-                "<all_urls>"
-            ],
+            "matches": ["*://*.walmart.com/checkout/*/payment"],
             "js": ["content.js"]
         }
     ],

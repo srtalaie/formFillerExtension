@@ -1,13 +1,27 @@
 chrome.runtime.onMessage.addListener(buttonClicked);
 
 //Popup on page load
-// const popupStyle = "color: red; font-family:"
+const popupStyle = `
+    background-color: white;
+    z-index: 99;
+    position: absolute;
+    right: 2%;
+    max-width: 200px;
+    top: 3%;
+    box-shadow: 1px 1px 1px grey;
+    padding: 10px;
+    font-family: 'Big Shoulders Display', cursive, Arial, Helvetica, sans-serif;
+    text-align: center;
+    animation: fadein 10s;
+`
 
-// window.onload = function (){
-//     let h1 = document.createElement('div');
-//     h1.innerHTML = '<p>Hello</p>';
-//     document.getElementsByTagName('body')[0].prepend(h1);
-// };
+window.onload = function (){
+    console.log('hello')
+    let popup = document.createElement('div');
+    popup.style = popupStyle;
+    popup.innerHTML = `<p>Congrats, You have a gift card(s) in your wallet that you can use!</p>`;
+    document.getElementsByTagName('body')[0].prepend(popup);
+};
 
 function buttonClicked(request, sender, senResponse){
     if(request.txt === 'clicked'){
