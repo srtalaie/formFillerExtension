@@ -14,13 +14,17 @@ const popupStyle = `
     text-align: center;
     animation: fadein 10s;
 `
-
 window.onload = function (){
-    console.log('hello')
     let popup = document.createElement('div');
     popup.style = popupStyle;
-    popup.innerHTML = `<p>Congrats, You have a gift card(s) in your wallet that you can use!</p>`;
-    document.getElementsByTagName('body')[0].prepend(popup);
+    popup.id = "giftCardPopup";
+    popup.innerHTML = `
+        <p>Congrats, You have a gift card(s) in your wallet that you can use!</p>`;
+    document.getElementsByClassName('checkout-wrapper')[0].prepend(popup);
+    
+    setTimeout(function(){
+        document.getElementById("giftCardPopup").style.visibility = "hidden";
+    }, 4000);
 };
 
 function buttonClicked(request, sender, senResponse){
