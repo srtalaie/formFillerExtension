@@ -15,18 +15,24 @@ const popupStyle = `
     animation: fadein 10s;
 `
 window.onload = function (){
-    let popup = document.createElement('div');
-    popup.style = popupStyle;
-    popup.id = "giftCardPopup";
-    popup.innerHTML = `
-        <p>Congrats, You have a gift card(s) in your wallet that you can use!</p>`;
-    document.getElementsByClassName('checkout-wrapper')[0].prepend(popup);
-    
-    setTimeout(function(){
-        document.getElementById("giftCardPopup").style.visibility = "hidden";
-    }, 4000);
-};
-
+    if(window.location.href === 'https://www.walmart.com/checkout/#/payment' || window.location.href === 'https://www.walmart.com/checkout/#/sign-in'){
+        chrome.runtime.sendMessage({
+            action: 'updateIcon',
+            value: true,
+            image: "/images/ezIcon.png"
+        });    
+        let popup = document.createElement('div');
+        popup.style = popupStyle;
+        popup.id = "giftCardPopup";
+        popup.innerHTML = `
+            <p>Congrats, You have a gift card(s) in your wallet that you can use!</p>`;
+        document.getElementsByClassName('checkout-wrapper')[0].prepend(popup);
+        
+        setTimeout(function(){
+            document.getElementById("giftCardPopup").style.visibility = "hidden";
+        }, 4000);
+    };
+}
 function buttonClicked(request, sender, senResponse){
     if(request.txt === 'clicked'){
         //Original Code to fill all input elements with text
@@ -113,7 +119,6 @@ function fillGiftCardField(){
     let giftCardPin = document.getElementById('pin');
     giftCardPin.value = '1234';
     let submitButton = document.getElementsByClassName('submit-save-gift-card');
-    console.log(submitButton);
     submitButton[0].click();
 }
 
