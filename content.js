@@ -75,9 +75,13 @@ function buttonClicked(request, sender, senResponse){
         // fillGiftCardNum(giftCardNumArray);
 
         //Calls synchronously original code that worked
+
         // let funcArray = [
         //    openForm(),
-        //    fillGiftCardField()
+        //    doEvent( el, 'input' ),
+        //    doEvent( el2, 'input' ),
+        //    clickButton()
+           
         // ]
 
         // funcArray.forEach(element => {
@@ -90,7 +94,41 @@ function buttonClicked(request, sender, senResponse){
         //Walmart giftcard number works fine
         // fillGiftCardField();
 
-        runFuncs();
+        // runFuncs();
+
+        // enterCardNum();
+
+        function doEvent( obj, event ) {
+            /* Created by David@Refoua.me */
+            var event = new Event( event, {target: obj, bubbles: true} );
+            return obj ? obj.dispatchEvent(event) : false;
+        }
+        // var el = document.getElementById("number");
+        // el.value = "6173437768138598";
+        
+
+        // var el2 = document.getElementById("pin");
+        // el2.value = "3288";
+        
+        function runEm(){
+            openForm();
+            setTimeout(function(){
+                var el = document.getElementById("number");
+                el.value = "6173437768138598";
+                doEvent(el, 'input');
+            }, 100);
+            setTimeout(function(){
+                var el2 = document.getElementById("pin");
+                el2.value = "3288";
+                doEvent(el2, 'input');
+            }, 100)
+            setTimeout(function(){
+                clickButton();
+            }, 100)
+        }
+
+        runEm();
+
     }
 
 }
@@ -98,12 +136,12 @@ function buttonClicked(request, sender, senResponse){
 //Open gift card form
 
 //Run functions
-function runFuncs(){
-    openForm();
-    setTimeout(function(){
-        fillGiftCardField();
-    }, 100)
-}
+// function runFuncs(){
+//     openForm();
+//     setTimeout(function(){
+//         fillGiftCardField();
+//     }, 100)
+// }
 
 function openForm(){
     let giftCardFormBtn = document.querySelector('[data-name="GIFTCARD"]');
@@ -112,15 +150,44 @@ function openForm(){
     return true;
 }
 
-//Walmart function
-function fillGiftCardField(){
-    let giftCardNumberInput = document.getElementById('number');
-    giftCardNumberInput.value = '1234123412341234';
-    let giftCardPin = document.getElementById('pin');
-    giftCardPin.value = '1234';
-    let submitButton = document.getElementsByClassName('submit-save-gift-card');
-    submitButton[0].click();
+// function enterCardNum(){
+//     let numArr = '6173437768138598'.split('');
+//     console.log(numArr);
+//     let holder = [];
+//     let giftCardNumberInput = document.getElementById('number');
+
+//     numArr.forEach(elem => {
+//         setTimeout(function(){
+//             holder.push(elem)
+//             console.log(holder.join(''));
+//             giftCardNumberInput.tabIndex = 0;
+//             giftCardNumberInput.value = holder.join('')
+//         }, 1000)
+//     })
+// }
+
+//Click button
+function clickButton(){
+    let submitButton = document.querySelector('[data-automation-id=submit-apply-gift-card]');
+    console.log(submitButton)
+    setTimeout(function(){
+        submitButton.click();
+    }, 1000);
 }
+
+//Walmart function
+// function fillGiftCardField(){
+//     let giftCardNumberInput = document.getElementById('number');
+//     giftCardNumberInput.defaultValue = '6173437768138598';
+//     let giftCardPin = document.getElementById('pin');
+//     giftCardPin.defaultValue = '3288';
+//     console.log(giftCardNumberInput.defaultValue, giftCardPin.defaultValue)
+//     let submitButton = document.querySelector('[data-automation-id=submit-apply-gift-card]');
+//     console.log(submitButton)
+//     setTimeout(function(){
+//         submitButton.click();
+//     }, 1000);
+// }
 
 //Add numbers as if user typed it to hopefully change the field recognize the # as a gift card #
 // function fillGiftCardNum(arr){
