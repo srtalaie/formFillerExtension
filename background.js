@@ -7,6 +7,7 @@ function buttonClicked(tab){
 }
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+    console.log(msg);
     if (msg.action === "updateIcon") {
         if (msg.value) {
             chrome.browserAction.setIcon({path: msg.image});

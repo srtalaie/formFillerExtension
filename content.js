@@ -30,7 +30,13 @@ window.onload = function (){
         
         setTimeout(function(){
             document.getElementById("giftCardPopup").style.visibility = "hidden";
-        }, 4000);
+        }, 3000);
+    } else {
+        chrome.runtime.sendMessage({
+            action: 'updateIcon',
+            value: false,
+            image: "/images/ezIconLight.png"
+        });
     };
 }
 function buttonClicked(request, sender, senResponse){
