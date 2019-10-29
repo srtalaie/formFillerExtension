@@ -14,8 +14,9 @@ const popupStyle = `
     text-align: center;
     animation: fadein 10s;
 `
-window.onload = function (){
-    if(window.location.href === 'https://www.walmart.com/checkout/#/payment' || window.location.href === 'https://www.walmart.com/checkout/#/sign-in'){
+window.addEventListener('hashchange', function(event){
+    console.log(event.target.location.href)
+    if(event.newURL === 'https://www.walmart.com/checkout/#/payment'){
         chrome.runtime.sendMessage({
             action: 'updateIcon',
             value: true,
@@ -38,7 +39,7 @@ window.onload = function (){
             image: "/images/ezIconLight.png"
         });
     };
-}
+});
 function buttonClicked(request, sender, senResponse){
     if(request.txt === 'clicked'){
         function doEvent( obj, event ) {
