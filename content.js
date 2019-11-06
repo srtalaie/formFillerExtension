@@ -1,5 +1,20 @@
 chrome.runtime.onMessage.addListener(buttonClicked);
 
+//Popup on page load
+const popupStyle = `
+    background-color: white;
+    z-index: 99;
+    position: absolute;
+    right: 2%;
+    max-width: 200px;
+    top: 3%;
+    box-shadow: 1px 1px 1px grey;
+    padding: 10px;
+    font-family: 'Big Shoulders Display', cursive, Arial, Helvetica, sans-serif;
+    text-align: center;
+    animation: fadein 10s;
+`
+
 window.addEventListener('hashchange', function(event){
     console.log(event.target.location.href)
     if(event.newURL === 'https://www.walmart.com/checkout/#/payment'){
@@ -8,7 +23,16 @@ window.addEventListener('hashchange', function(event){
             value: true,
             image: "/images/ezIcon.png"
         });    
-       
+        let popup = document.createElement('div');
+        popup.style = popupStyle;
+        popup.id = "giftCardPopup";
+        popup.innerHTML = `
+            <p>Congrats, You have a gift card(s) in your wallet that you can use!</p>`;
+        document.getElementsByClassName('checkout-wrapper')[0].prepend(popup);
+
+        setTimeout(function(){
+            document.getElementById("giftCardPopup").style.visibility = "hidden";
+        }, 3000);
     } else {
         chrome.runtime.sendMessage({
             action: 'updateIcon',
