@@ -21,7 +21,7 @@ window.addEventListener('hashchange', function(event){
         chrome.runtime.sendMessage({
             action: 'updateIcon',
             value: true,
-            image: "/images/ezIcon.png"
+            image: "/images/ezIconNew.png"
         });    
         let popup = document.createElement('div');
         popup.style = popupStyle;
@@ -37,10 +37,11 @@ window.addEventListener('hashchange', function(event){
         chrome.runtime.sendMessage({
             action: 'updateIcon',
             value: false,
-            image: "/images/ezIconLight.png"
+            image: "/images/ezIconNewLight.png"
         });
     };
 });
+
 function buttonClicked(request, sender, senResponse){
     if(request.txt === 'clicked'){
         function doEvent( obj, event ) {
@@ -48,9 +49,12 @@ function buttonClicked(request, sender, senResponse){
             var event = new Event( event, {target: obj, bubbles: true} );
             return obj ? obj.dispatchEvent(event) : false;
         }
-        
+
         function runFiller(){
             openForm();
+            setTimeout(function(){
+                applied();
+            }, 100);
             setTimeout(function(){
                 var el = document.getElementById("number");
                 el.value = "6173437768138598";
@@ -60,14 +64,36 @@ function buttonClicked(request, sender, senResponse){
                 var el2 = document.getElementById("pin");
                 el2.value = "3288";
                 doEvent(el2, 'input');
-            }, 100)
+            }, 100);
             setTimeout(function(){
                 clickButton();
-            }, 100)
+            }, 100);
         }
         runFiller();
     }
 
+}
+
+function applied(){
+    console.log('Im running');
+    let appliedOverlay = document.createElement('div');
+    appliedOverlay.id = "appliedOverlay";
+    appliedOverlay.style = `
+        height: 100vh;
+        width: 100vw;
+        z-index: 99;
+        position: absolute;
+        background-color: rgba(255, 255, 255, 0.65);
+        #overlay-img {
+           
+        }
+    `
+    appliedOverlay.innerHTML = `
+        <img src="${chrome.runtime.getURL("images/applied.PNG")}" style="display: block; margin-left: auto; margin-right: auto; margin-top: 60%;">`;
+    document.getElementsByClassName('accordion-inner-wrapper')[0].prepend(appliedOverlay);
+    setTimeout(function(){
+        document.getElementById("appliedOverlay").style.visibility = "hidden";
+    }, 2000);
 }
 
 function openForm(){
