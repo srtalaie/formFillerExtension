@@ -89,7 +89,7 @@ function applied(){
         }
     `
     appliedOverlay.innerHTML = `
-        <img src="${chrome.runtime.getURL("images/applied.PNG")}" style="display: block; margin-left: auto; margin-right: auto; margin-top: 60%;">`;
+        <img src="${chrome.runtime.getURL("images/applied.PNG")}" style="display: block; margin-left: auto; margin-right: auto; margin-top: 65%;">`;
     document.getElementsByClassName('accordion-inner-wrapper')[0].prepend(appliedOverlay);
     setTimeout(function(){
         document.getElementById("appliedOverlay").style.visibility = "hidden";
