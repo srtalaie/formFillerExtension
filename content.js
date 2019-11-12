@@ -1,6 +1,6 @@
 chrome.runtime.onMessage.addListener(buttonClicked);
 
-//Popup on page load
+//Popup style on page load
 const popupStyle = `
     background-color: white;
     z-index: 99;
@@ -14,7 +14,8 @@ const popupStyle = `
     text-align: center;
     animation: fadein 10s;
 `
-
+//When url's hash changes to #payment fire the notification popup and change the icon from greyed out to normal, if not icon stays 
+//greyed out
 window.addEventListener('hashchange', function(event){
     console.log(event.target.location.href)
     if(event.newURL === 'https://www.walmart.com/checkout/#/payment'){
@@ -42,14 +43,17 @@ window.addEventListener('hashchange', function(event){
     };
 });
 
+//When button on extension popup is clicked fill out the form and submit the gift card
 function buttonClicked(request, sender, senResponse){
     if(request.txt === 'clicked'){
+        //Helper found to fill out form fields
         function doEvent( obj, event ) {
             /* Created by David@Refoua.me */
             var event = new Event( event, {target: obj, bubbles: true} );
             return obj ? obj.dispatchEvent(event) : false;
         }
 
+        //Function runs each function
         function runFiller(){
             openForm();
             setTimeout(function(){
@@ -74,6 +78,7 @@ function buttonClicked(request, sender, senResponse){
 
 }
 
+//Displays checkmark while runFiller() is running
 function applied(){
     console.log('Im running');
     let appliedOverlay = document.createElement('div');
