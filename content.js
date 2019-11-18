@@ -80,7 +80,6 @@ function buttonClicked(request, sender, senResponse){
 
 //Displays checkmark while runFiller() is running
 function applied(){
-    console.log('Im running');
     let appliedOverlay = document.createElement('div');
     appliedOverlay.id = "appliedOverlay";
     appliedOverlay.style = `
@@ -88,17 +87,14 @@ function applied(){
         width: 100vw;
         z-index: 99;
         position: absolute;
-        background-color: rgba(255, 255, 255, 0.65);
-        #overlay-img {
-           
-        }
+        background-color: rgba(255, 255, 255, 0.50);
     `
     appliedOverlay.innerHTML = `
-        <img src="${chrome.runtime.getURL("images/applied.PNG")}" style="display: block; margin-left: auto; margin-right: auto; margin-top: 65%;">`;
-    document.getElementsByClassName('accordion-inner-wrapper')[0].prepend(appliedOverlay);
+        <img src="${chrome.runtime.getURL("images/checkmark.gif")}" style="display: block; margin-left: auto; margin-right: auto; margin-top: 100vh;">`;
+    document.getElementsByClassName('accordion-outer-wrapper')[0].prepend(appliedOverlay);
     setTimeout(function(){
         document.getElementById("appliedOverlay").style.visibility = "hidden";
-    }, 2000);
+    }, 2500);
 }
 
 function openForm(){

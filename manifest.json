@@ -12,7 +12,7 @@
     "background": {
         "scripts": ["background.js"]
     },
-    "web_accessible_resources": ["images/applied.PNG"],
+    "web_accessible_resources": ["images/applied.PNG", "images/checkmark.gif"],
     "browser_action": {
         "default_icon": "/images/ezIconNewLight.png",
         "default_popup": "popup.html",
