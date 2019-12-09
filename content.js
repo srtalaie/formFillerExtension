@@ -33,7 +33,8 @@ window.addEventListener('hashchange', function(event){
 
         setTimeout(function(){
             document.getElementById("giftCardPopup").style.visibility = "hidden";
-        }, 3000);
+        }, 
+        4000);
     } else {
         chrome.runtime.sendMessage({
             action: 'updateIcon',
